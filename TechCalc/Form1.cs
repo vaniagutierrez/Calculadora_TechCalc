@@ -37,7 +37,7 @@ namespace TechCalc
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Formato inválido, por favor intente nuevamente.");
                     primernumtxt.Text = "";
                     segundonumtxt.Text = "";
                 }
@@ -66,7 +66,7 @@ namespace TechCalc
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Formato inválido, por favor intente nuevamente.");
                     primernumtxt.Text = "";
                     segundonumtxt.Text = "";
                 }
@@ -82,6 +82,7 @@ namespace TechCalc
         {
             string num1 = primernumtxt.Text;
             string num2 = segundonumtxt.Text;
+            double num1_double = 0;
             int num1_int = 0;
             int num2_int = 0;
 
@@ -91,13 +92,14 @@ namespace TechCalc
                     try
                     {
                         num1_int = Convert.ToInt32(num1);
+                        num1_double = Convert.ToDouble(num1_int);
                         num2_int = Convert.ToInt32(num2);
-                        int resultado = num1_int / num2_int;
-                        resultadolbl.Text = resultado.ToString();
+                        double resultado = num1_double / num2_int;
+                        resultadolbl.Text = resultado.ToString("0.###");
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show("Formato inválido, por favor intente nuevamente.");
                         primernumtxt.Text = "";
                         segundonumtxt.Text = "";
                     }
@@ -132,7 +134,7 @@ namespace TechCalc
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show("Formato inválido, por favor intente nuevamente.");
                         primernumtxt.Text = "";
                         segundonumtxt.Text = "";
                     }
